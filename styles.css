@@ -1,4 +1,4 @@
-/* Reset default padding and margins */
+/* Reset padding, margin, and box-sizing */
 * {
   margin: 0;
   padding: 0;
@@ -19,6 +19,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  height: 80px; /* Set an explicit height */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -52,7 +53,7 @@ nav a:hover {
 
 /* Main content spacing to avoid overlap with navbar */
 main {
-  padding-top: 120px; /* Adjust to match the header height */
+  padding-top: 95px; /* This matches the header's height + padding */
   text-align: center;
   padding: 20px;
 }
