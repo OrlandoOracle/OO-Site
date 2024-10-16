@@ -11,6 +11,7 @@
 </head>
 <body>
 
+  <!-- Background Video -->
   <div class="video-container">
     <video autoplay muted loop class="video-bg">
       <source src="assets/video.mp4" type="video/mp4">
@@ -18,6 +19,7 @@
     </video>
   </div>
 
+  <!-- Sticky Navbar -->
   <header>
     <img src="assets/logo.png" alt="Site Logo" class="logo">
     <nav>
@@ -30,10 +32,16 @@
     </nav>
   </header>
 
+  <!-- Main Content with Hero Section -->
   <main>
-    <h1>Welcome to Orlando Oracle's World</h1>
-    <p>Explore, Discover, and Experience.</p>
-    <button onclick="checkAvailability()">Check Availability</button>
+    <div class="hero">
+      <img src="assets/hero.jpg" alt="Hero Image" class="hero-img">
+      <div class="hero-content">
+        <h1>Welcome to Orlando Oracle's World</h1>
+        <p>Explore, Discover, and Experience.</p>
+        <button onclick="checkAvailability()">Check Availability</button>
+      </div>
+    </div>
   </main>
 
   <script src="script.js"></script>
