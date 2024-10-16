@@ -1,34 +1,38 @@
+/* Reset default padding and margins */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+/* Ensure html and body cover the full viewport */
+html, body {
+  height: 100%;
   font-family: 'Montserrat', sans-serif;
   background-color: #000;
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
 }
 
+/* Sticky header styles */
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.8); /* Slight transparency */
+  z-index: 1000; /* Ensure it stays above other content */
 }
 
+/* Logo styling */
 .logo {
   width: 80px;
 }
 
+/* Navbar styling */
 nav ul {
   list-style: none;
   display: flex;
@@ -38,13 +42,22 @@ nav ul {
 nav a {
   text-decoration: none;
   color: white;
-  transition: color 0.3s;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: royalblue;
 }
 
+/* Main content padding to avoid overlap with navbar */
+main {
+  padding-top: 80px; /* Adjust to match header height */
+  text-align: center;
+  padding: 20px;
+}
+
+/* Background video container */
 .video-container {
   position: fixed;
   top: 0;
@@ -52,11 +65,61 @@ nav a:hover {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1;
+  z-index: -1; /* Place behind content */
 }
 
 .video-bg {
   min-width: 100%;
   min-height: 100%;
   object-fit: cover;
+}
+
+/* Gallery styling */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.gallery img, .gallery iframe {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover, .gallery iframe:hover {
+  transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+/* Button styles */
+button {
+  padding: 10px 20px;
+  background-color: royalblue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: darkblue;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
 }
